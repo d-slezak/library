@@ -23,6 +23,35 @@
         <div class="footer">
             <h3>Copyright Daniel Slezak</h3>
         </div>
+        <div class="pop-Up" id="popUp">
+            <form class="add-Book-Form" id="addBookForm">
+                <h2>Add New Book</h2>
+                <input 
+                    class="input"
+                    type="text"
+                    id="title"
+                    placeholder="Title"
+                    required
+                />
+                <input 
+                    class="input"
+                    type="text"
+                    id="author"
+                    placeholder="Author"
+                    required
+                />
+                <input 
+                    class="input"
+                    type="number"
+                    id="pages"
+                    placeholder="0"
+                    required
+                />
+                <label for="isRead">Have you read this book?</label>
+                <input class="checkbox" type="checkbox"/>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
