@@ -38,7 +38,11 @@ body {
 
 .content {
     background-color: var(--LightBrown);
-    padding: 3rem 10rem;
+    padding: 3rem  10rem 0rem 10rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
 }
 
 .topContent {
@@ -78,7 +82,7 @@ body {
 
 .footer {
     background-color: var(--LightBrown);
-    margin: 0;
+    margin-top: auto;
 }
 
 .footer h3{
