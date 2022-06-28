@@ -1,0 +1,85 @@
+:root{
+    --DarkBrown: #5D4632;
+    --LightBrown: #9D8672;
+    --WhiteText: #F8F4EF;
+    --Shadow: #251C14;
+    --ButtonText: #382A1E;
+}
+
+body {
+    margin: 0;
+    color: var(--WhiteText);
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.header{
+    padding: 3rem 10rem ;
+    
+    background-color: var(--DarkBrown);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: scale(1);
+    box-shadow: 0 4px 4px var(--Shadow);
+}
+
+#login{
+    margin-left: auto;
+    padding: 1.5rem 4rem;
+
+    border-radius: 4em;
+}
+
+.content {
+    background-color: var(--LightBrown);
+    padding: 3rem 10rem;
+}
+
+.topContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addBook {
+    padding: 2rem;
+    border-radius: 2em;
+}
+
+.btn{
+    box-shadow: 0 4px 4px var(--Shadow);
+    border: var(--ButtonText) solid;
+    background-color: var(--WhiteText);
+    font-weight: bolder;
+    color: var(--ButtonText);
+}
+
+.btn:hover{
+    background-color: var(--DarkBrown);
+    border: var(--WhiteText) solid;
+    color: var(--WhiteText);
+}
+
+.mainContent{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.bookCard{
+
+}
+
+.footer {
+    background-color: var(--LightBrown);
+    margin: 0;
+}
+
+.footer h3{
+    margin: 0;
+}
