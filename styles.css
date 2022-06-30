@@ -73,7 +73,7 @@ body {
 
 .mainContent{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .bookCard{

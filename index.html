@@ -18,7 +18,7 @@
             <div class="topContent">
                 <button class="btn" id="addBook">+ Add Book</button>
             </div>
-            <div class="mainContent"></div>
+            <div class="mainContent" id="cardDisplay"></div>
             <div class="footer">
                 <h3>Copyright Daniel Slezak</h3>
             </div>
@@ -31,6 +31,7 @@
                     class="input"
                     type="text"
                     id="title"
+                    name="title"
                     placeholder="Title"
                     required
                 />
@@ -38,6 +39,7 @@
                     class="input"
                     type="text"
                     id="author"
+                    name="author"
                     placeholder="Author"
                     required
                 />
@@ -45,11 +47,12 @@
                     class="input"
                     type="number"
                     id="pages"
+                    name="pages"
                     placeholder="0"
                     required
                 />
                 <label for="isRead">Have you read this book?</label>
-                <input class="checkbox" type="checkbox"/>
+                <input class="checkbox" type="checkbox" id="isRead" name="isRead"/>
                 <button class="btn" type="submit">Submit</button>
             </form>
         </div>
