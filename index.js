@@ -14,19 +14,28 @@ function Book(title, author, pages, isRead){
     this.isRead = isRead;
 }
 
+function displayLibrary(){
+    library.forEach(addBookDom)
+}
+
+let firstBook = new Book('Atomic Habits', 'James Clear', 306, false);
+library.push(firstBook);
+displayLibrary();
+
+
 function addBook(e){
     e.preventDefault();
     const formData = new FormData(e.target);
     const title = formData.get('title');
     const author = formData.get('author');
     const pages = formData.get('pages');
-    const isRead = formData.get('isRead');
+    const isRead = (formData.get('isRead') ? true : false);
 
     const newBook = new Book(title, author, pages, isRead);
 
-    addBookForm.reset();
     addBookDom(newBook);
     closePopUp();
+    console.log(newBook);
 }
 
 function removeBook(book)
@@ -36,9 +45,40 @@ function removeBook(book)
 
 function addBookDom(book)
 {
-    const bookCard = document.createElement('div')
+    const bookCard = document.createElement('div');
     bookCard.classList.add('bookCard');
-    bookCard.setAttribute("id", book.title)
+    bookCard.setAttribute("id", book.title);
+
+    const title = document.createElement('h2');
+    title.textContent = book.title;
+
+    const author = document.createElement('p');
+    author.textContent = book.author;
+
+    const pages = document.createElement('p');
+    pages.textContent = book.pages;
+
+    const bookBtns = document.createElement('div');
+    bookBtns.classList.add('bookBtns');
+
+    const isRead = document.createElement('button');
+    isRead.textContent = (book.isRead ? 'Read' : 'Not Read');
+    isRead.classList.add('isReadBtn');
+    isRead.setAttribute('id', (book.isRead ? 'isRead' : 'notRead'));
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.classList = 'removeBookBtn';
+    removeBtn.setAttribute('name' , book.title);
+
+    bookBtns.appendChild(isRead);
+    bookBtns.appendChild(removeBtn);
+
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pages);
+    bookCard.appendChild(bookBtns);
+
     cardDisplay.appendChild(bookCard);
 }
 
@@ -48,6 +88,7 @@ const openPopUp = () => {
 }
 
 const closePopUp = () => {
+    addBookForm.reset();
     popUp.classList.remove('active');
 }
 
