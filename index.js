@@ -34,8 +34,8 @@ function addBook(e){
     const newBook = new Book(title, author, pages, isRead);
 
     addBookDom(newBook);
+    library.push(newBook);
     closePopUp();
-    console.log(newBook);
 }
 
 function removeBook(book)
@@ -53,10 +53,10 @@ function addBookDom(book)
     title.textContent = book.title;
 
     const author = document.createElement('p');
-    author.textContent = book.author;
+    author.textContent = `By ${book.author}`;
 
     const pages = document.createElement('p');
-    pages.textContent = book.pages;
+    pages.textContent = `${book.pages} pages`;
 
     const bookBtns = document.createElement('div');
     bookBtns.classList.add('bookBtns');
@@ -64,11 +64,14 @@ function addBookDom(book)
     const isRead = document.createElement('button');
     isRead.textContent = (book.isRead ? 'Read' : 'Not Read');
     isRead.classList.add('isReadBtn');
-    isRead.setAttribute('id', (book.isRead ? 'isRead' : 'notRead'));
+    isRead.classList.add('btn');
+    isRead.classList.add(book.isRead ? 'isRead' : 'notRead');
+    isRead.onclick = updateBook(book.title);
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.classList = 'removeBookBtn';
+    removeBtn.classList.add('btn');
     removeBtn.setAttribute('name' , book.title);
 
     bookBtns.appendChild(isRead);
@@ -80,6 +83,18 @@ function addBookDom(book)
     bookCard.appendChild(bookBtns);
 
     cardDisplay.appendChild(bookCard);
+}
+
+function updateBook(e){
+    //console.log(e);
+}
+
+function updateBookDom(book) {
+
+}
+
+function removeBookDom(book) {
+
 }
 
 

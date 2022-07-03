@@ -4,6 +4,8 @@
     --WhiteText: #F8F4EF;
     --Shadow: #251C14;
     --ButtonText: #382A1E;
+    --isRead: #BAB863;
+    --notRead: #BA6366;
 }
 
 body {
@@ -49,6 +51,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 2rem;
 }
 
 #addBook {
@@ -74,10 +77,50 @@ body {
 .mainContent{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
 }
 
 .bookCard{
+    border: var(--ButtonText) solid;
+    box-shadow: 0 4px 4px var(--Shadow);
+    background-color: var(--DarkBrown);
+    border-radius: 2em;
+    text-align: center;
 
+    padding: 2rem;
+}
+
+.bookBtns{
+    width: 100%;
+}
+
+.bookBtns .btn{
+    width: 100px;
+    margin: 10px;
+}
+
+.isRead {
+    background-color: var(--isRead);
+    border: var(--WhiteText) solid;
+    color: var(--WhiteText);
+}
+
+.isRead:hover{
+    background-color: var(--WhiteText);
+    border: var(--isRead) solid;
+    color: var(--isRead);
+}
+
+.notRead {
+    background-color: var(--notRead);
+    border: var(--WhiteText) solid;
+    color: var(--WhiteText);
+}
+
+.notRead:hover{
+    background-color: var(--WhiteText);
+    border: var(--notRead) solid;
+    color: var(--notRead);
 }
 
 .footer {
