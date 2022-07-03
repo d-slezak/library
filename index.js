@@ -66,13 +66,14 @@ function addBookDom(book)
     isRead.classList.add('isReadBtn');
     isRead.classList.add('btn');
     isRead.classList.add(book.isRead ? 'isRead' : 'notRead');
-    isRead.onclick = updateBook(book.title);
+    isRead.onclick = () => updateBook(book.title);
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.classList = 'removeBookBtn';
     removeBtn.classList.add('btn');
     removeBtn.setAttribute('name' , book.title);
+    removeBtn.onclick = () => removeBook(book.title);
 
     bookBtns.appendChild(isRead);
     bookBtns.appendChild(removeBtn);
@@ -85,12 +86,31 @@ function addBookDom(book)
     cardDisplay.appendChild(bookCard);
 }
 
-function updateBook(e){
-    //console.log(e);
+function updateBook(title){
+    const book = library.find(book => book.title === title);
+    book.isRead = (book.isRead ? false : true);
+    updateBookDom(book);
 }
 
 function updateBookDom(book) {
+    const toUpdate = document.getElementById(book.title);
+    const isRead = toUpdate.querySelector('.isReadBtn');
+    isRead.textContent = (book.isRead ? 'Read' : 'Not Read')
+    if(book.isRead)
+    {
+        isRead.classList.remove('notRead');
+        isRead.classList.add('isRead');
+    } else {
+        isRead.classList.remove('isRead');
+        isRead.classList.add('notRead');
+    }
+}
 
+function removeBook(title){
+    const book = library.find(book => book.title === title);
+    removeBookDom(book);
+    library = library.filter(book => book.title != title);
+    console.log(library);
 }
 
 function removeBookDom(book) {
