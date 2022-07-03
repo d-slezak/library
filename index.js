@@ -110,11 +110,11 @@ function removeBook(title){
     const book = library.find(book => book.title === title);
     removeBookDom(book);
     library = library.filter(book => book.title != title);
-    console.log(library);
 }
 
 function removeBookDom(book) {
-
+    const toRemove = document.getElementById(book.title);
+    toRemove.remove();
 }
 
 
