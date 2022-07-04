@@ -6,6 +6,7 @@ const bookGrid = document.getElementById('mainContent');
 const popUp = document.getElementById('popUp');
 const addBookForm = document.getElementById('addBookForm');
 const cardDisplay = document.getElementById('cardDisplay');
+const cancelBtn = document.getElementById('formCancel');
 
 function Book(title, author, pages, isRead){
     this.title = title;
@@ -129,3 +130,4 @@ const closePopUp = () => {
 
 addBookBtn.onclick = openPopUp;
 addBookForm.onsubmit = addBook;
+cancelBtn.addEventListener('click', closePopUp, false)

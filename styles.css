@@ -148,6 +148,16 @@ body {
     transform: scale(0);
 }
 
+#formBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formBtns .btn {
+    margin: 2em;
+}
+
 .pop-Up.active {
     transform: translate(-50%, -50%) scale(1);
 }
